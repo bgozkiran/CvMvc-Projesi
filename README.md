@@ -15,11 +15,9 @@ Admin paneli üzerinden kullanıcı bilgileri düzenlenebilir; ziyaretçiler ise
 - **Dinamik yetenek sayfası**
 - **Aktif / Pasif** durum yönetimi
 - **Pop-up** ile veri ekleme ekranı
-- **CRUD** işlemleri (Admin + Default tarafı)
+- **CRUD** işlemleri (Admin + Default tarafı sayfaların oluşturulması)
 - **Validation:** kontrolleri (Required, MaxLength vb.)
-- **Admin kullanıcısı:**  Hesap kontrolleri vb (Ekleme/Düzenleme/ Silme)
-- **Giriş İşlemleri:** Login - Logout  kontrolleri
-- **Authorize** [AllowAnonimus] ile sayfa erişimKontrolleri vb , wev confing ayarlamaları) 
+- **Authorize** [AllowAnonimus] ile sayfa erişim kontrolleri vb , wev confing ayarlamaları) 
 
 ## Kullanılan Teknolojiler
 
@@ -28,7 +26,7 @@ Admin paneli üzerinden kullanıcı bilgileri düzenlenebilir; ziyaretçiler ise
 - Veritabanı: **Microsoft SQL Server**
 - Yaklaşım: **Entity Framework - Code First**
 - Framework: **.NET Framework 4.7.2**
-- Entity Framework: ** 5.0 **
+- Entity Framework: 5.0 
 
 ### Frontend
 - Proje yapısı/tema: **Portfolio**, **AdminLTE**, **Login Form**
