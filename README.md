@@ -48,8 +48,6 @@ Proje, MVC mimarisini takip eder:
 
 ## Ekran Görüntüleri 
 
-![CvMvc](images/Login sayfası.png)
-
 ![CvMvc](images/Anasayfa.png)
 
 ![CvMvc](images/PopupSosyalMedya-AktifPasif.png)
