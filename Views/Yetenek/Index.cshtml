@@ -1,0 +1,102 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblYeteneklerim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+
+<body class="hold-transition sidebar-mini">
+
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Yetenek Listem</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <a href="/Yetenek/YeniYetenek/" class="btn btn-info">Yetenek Ekle</a>
+                            <br /><br />
+                            <table class="table table-bordered">
+
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Yetenek</th>
+                                        <th>Derece</th>
+                                        <th style="width: 40px">Oran</th>
+                                        <th>Düzenle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{string renk = ""; }
+                                    @foreach (var item in Model)
+                                    {
+
+
+                                        if (item.Oran >= 0 && item.Oran <= 50)
+                                        {
+                                            renk = "bg-danger";
+                                        }
+                                        else if (item.Oran >= 51 && item.Oran <= 74)
+                                        {
+                                            renk = "bg-warning";
+                                        }
+                                        else if (item.Oran >= 75 && item.Oran <= 84)
+                                        {
+                                            renk = "bg-primary";
+                                        }
+                                        else if (item.Oran >= 85 && item.Oran <= 100)
+                                        {
+                                            renk = "bg-success";
+                                        }
+                                        else
+                                        {
+                                            renk = "";
+                                        }
+
+
+                                        <tr>
+                                            <td>@item.ID</td>
+                                            <td>@item.Yetenek</td>
+                                            <td>
+                                                <div class="progress progress-xs">
+                                                    <div class="progress-bar @renk" style="width:  @($"{item.Oran}%");"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge @renk">@item.Oran%</span></td>
+                                            <td>
+                                                <a class="btn btn-info btn-sm" href="/Yetenek/YetenekDuzenle/@item.ID">
+                                                    <i class="fas fa-pencil-alt">
+                                                    </i>
+                                                    Düzenle
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-danger btn-sm" href="/Yetenek/YetenekSil/@item.ID">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Sil
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

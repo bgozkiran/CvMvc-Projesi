@@ -1,0 +1,33 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblAnasayfa>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2>Anasayfa</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Resim</th>
+        <th>Ad Soyad</th>
+        <th>Aciklama</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Resim</td>
+            <td>@item.AdSoyad</td>
+            <td>@item.Aciklama</td>
+            <td><a href="/Anasayfa/AnasayfaSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Anasayfa/AnasayfaDuzenle/@item.ID" class="btn btn-warning">Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Anasayfa/AnasayfaEkle/" class="btn btn-primary">Yeni Bilgi Ekle</a>

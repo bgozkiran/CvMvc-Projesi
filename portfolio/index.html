@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Adınız Soyadınız</title>
+    <link rel="stylesheet" href="/portfolio/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">Adınız Soyadınız</div>
+
+        <nav class="main-nav">
+            <a href="#home">Anasayfa</a>
+            <a href="#about">Hakkımda</a>
+            <a href="#education">Eğitim Hayatım</a>
+            <a href="#expreience">Deneyimlerim</a>
+            <a href="#skills">Becerilerim</a>
+            <a href="#projects">Projelerim</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO / ANASAYFA -->
+        <section id="home" class="section hero">
+            <div class="hero-grid">
+                <!-- PROFİL KARTI -->
+                <aside class="profile-card">
+                    <div class="profile-photo-wrapper">
+                        <img
+                            id="profile-photo"
+                            src="/assets/img/"
+                            alt="Profil fotoğrafı"
+                        />
+                    </div>
+                </aside>
+
+                <!-- METİN TARAFI -->
+                <div class="hero-text">
+                    <h1>
+                        Merhaba, ben
+                        <span class="accent">Adınız Soyadınız</span>
+                    </h1>
+
+                    <h2 class="typing-container">
+                        <span id="typing-text"></span>
+                        <span class="typing-cursor"></span>
+                    </h2>
+
+                    <p class="hero-intro">
+                        Modern, performanslı ve kullanıcı odaklı arayüzler geliştiren
+                        bir yazılım geliştiricisiyim. Web teknolojileri, temiz kod ve
+                        sürekli öğrenme odağında projeler üretiyorum.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn primary">Projelerime Göz At</a>
+                        <a href="#contact" class="btn outline">Benimle Çalış</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing verisi (index içinde) -->
+            <script id="typing-phrases-data" type="application/json">
+            [
+                "Web geliştiricisiyim.",
+                "Modern ve canlı arayüzler tasarlıyorum.",
+                "Performans odaklı uygulamalar geliştiriyorum.",
+                "Takım odaklı, temiz kod yazmayı seviyorum."
+            ]
+            </script>
+        </section>
+
+        <!-- HAKKIMDA -->
+        <section id="about" class="section about">
+  <h2>Hakkımda</h2>
+
+  <div class="about-grid">
+    <p>
+      Ben <strong>Adınız Soyadınız</strong>, web teknolojilerine odaklanan
+      bir geliştiriciyim. Modern JavaScript ekosistemi, yeniden
+      kullanılabilir bileşen yapıları ve temiz mimari ile projeler
+      geliştirmeyi seviyorum.
+    </p>
+    <p>
+      Özellikle frontend tarafında güçlü, ancak
+      backend ve API geliştirme konusunda da aktif
+      çalışan bir geliştirici olarak, fikirlerinizi uçtan uca hayata
+      geçirebilecek becerilere sahibim.
+    </p>
+  </div>
+
+  <!-- SOSYAL MEDYA (alt kısım - ortalı) -->
+  <div class="about-social">
+    <div class="about-social-title">Sosyal Medya</div>
+
+    <div class="about-social-links" aria-label="Sosyal medya bağlantıları">
+      <a class="social-icon" href="https://github.com/kullaniciadiniz" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a class="social-icon" href="https://linkedin.com/in/kullaniciadiniz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+
+      <a class="social-icon" href="https://instagram.com/kullaniciadiniz" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <a class="social-icon" href="https://x.com/kullaniciadiniz" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+        <!-- EĞİTİM HAYATI -->
+        <section id="education" class="section education">
+            <h2>Eğitim Hayatım</h2>
+
+            <ul class="timeline">
+                <li class="timeline-item reveal-on-scroll">
+                    <div class="timeline-date">2021 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bilgisayar Mühendisliği</h3>
+                        <p>Örnek Üniversitesi</p>
+                        <p>
+                            Yazılım geliştirme, veri yapıları, ağlar ve modern web
+                            teknolojileri alanında lisans eğitimi.
+                        </p>
+                        <p>Gno: </p>
+                    </div>
+                </li>                
+            </ul>
+        </section>
+
+       
+             <!-- DENEYİMLER -->
+        <section id="expreience" class="section education">
+            <h2>Deneyimlerim</h2>
+
+            <ul class="timeline">
+                <li class="timeline-item reveal-on-scroll">
+                    <div class="timeline-date">2021 - 2025</div>
+                    <div class="timeline-content">
+                        <h3>Bilgisayar Mühendisliği</h3>
+                        <p>Örnek Üniversitesi</p>
+                        <p>
+                            Yazılım geliştirme, veri yapıları, ağlar ve modern web
+                            teknolojileri alanında lisans eğitimi.
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        
+
+        <!-- BECERİLER -->
+        <section id="skills" class="section skills">
+            <h2>Becerilerim</h2>
+            <p>Kategorilere göre filtrelenebilen, yüzdeli ve animasyonlu barlar.</p>
+
+            <div class="skills-filters">
+                <button class="filter-btn" data-filter="all">Hepsi</button>  
+                <button class="filter-btn" data-filter="siber">Siber Güvenlik</button>
+                <button class="filter-btn" data-filter="backend">Backend</button>
+                <button class="filter-btn" data-filter="database">Veritabanı</button>
+                <button class="filter-btn" data-filter="tools">Araçlar</button>
+            </div>
+
+            <div class="skills-list">
+                <div class="skill" data-category="siber" data-percent="10">
+                    <div class="skill-header">
+                        <span>HTML / CSS</span>
+                        <span class="skill-percent">0%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-fill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJELER - DİNAMİK TABLO -->
+        <section id="projects" class="section projects">
+            <h2>Projeler</h2>
+            <p>
+                Aşağıdaki tablo JavaScript ile dinamik olarak doldurulur,
+                kategoriye göre filtrelenebilir ve yıla göre sıralanabilir.
+            </p>
+
+            <div class="projects-controls">
+                <div class="projects-filters">
+                    <button class="projects-filter-btn active" data-project-filter="all">
+                        Tümü
+                    </button>
+                    <button class="projects-filter-btn" data-project-filter="web">
+                        Web
+                    </button>
+                    <button class="projects-filter-btn" data-project-filter="mobile">
+                        Mobil
+                    </button>
+                    <button class="projects-filter-btn" data-project-filter="other">
+                        Diğer
+                    </button>
+                </div>
+
+                <button id="sort-year-btn" class="btn ghost small">
+                    Yıla Göre Sırala
+                </button>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="projects-table">
+                    <thead>
+                        <tr>
+                            <th>Proje Adı</th>
+                            <th>Kategori</th>
+                            <th>Teknolojiler</th>
+                            <th>Yıl</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projects-body">
+                        <!-- script.js tarafından doldurulacak -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Proje verisi (index içinde) -->
+            <script id="projects-data" type="application/json">
+            [
+                {
+                    "name": "Kişisel Portfolio Sitesi",
+                    "category": "web",
+                    "tech": "HTML, CSS, JavaScript",
+                    "year": 2024
+                },
+                {
+                    "name": "Blog Platformu",
+                    "category": "web",
+                    "tech": "React, Node.js, MongoDB",
+                    "year": 2023
+                },
+                {
+                    "name": "Görev Takip Mobil Uygulaması",
+                    "category": "mobile",
+                    "tech": "React Native, Redux",
+                    "year": 2022
+                },
+                {
+                    "name": "Gerçek Zamanlı Sohbet Uygulaması",
+                    "category": "web",
+                    "tech": "Socket.io, Node.js",
+                    "year": 2022
+                },
+                {
+                    "name": "API Otomasyon Scriptleri",
+                    "category": "other",
+                    "tech": "Node.js, Axios",
+                    "year": 2021
+                }
+            ]
+            </script>
+        </section>
+
+        <!-- İLETİŞİM -->
+        <section id="contact" class="section contact">
+            <h2>İletişim</h2>
+            <p>Projeler, iş birlikleri veya soru-cevap için bana ulaşabilirsin.</p>
+
+            <div class="contact-grid">
+                <div>
+                    <p><strong>E-posta:</strong> seninmailin@example.com</p>
+                    <p><strong>GitHub:</strong> github.com/kullaniciadiniz</p>
+                    <p><strong>LinkedIn:</strong> linkedin.com/in/kullaniciadiniz</p>
+                </div>
+
+                <form
+                    class="contact-form"
+                    onsubmit="event.preventDefault(); alert('Mesajın için teşekkürler! (Demo form)');"
+                >
+                    <label>
+                        Ad Soyad
+                        <input type="text" required />
+                    </label>
+                    <label>
+                        E-posta
+                        <input type="email" required />
+                    </label>
+                    <label>
+                        Mesaj
+                        <textarea rows="4" required></textarea>
+                    </label>
+                    <button type="submit" class="btn primary">Gönder</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© <span id="year"></span> Adınız Soyadınız. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="/portfolio/script/script.js"></script>
+</body>
+</html>

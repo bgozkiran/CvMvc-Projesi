@@ -1,0 +1,25 @@
+﻿@model CvMvc.Models.Entity.TblYeteneklerim
+@{
+    ViewBag.Title = "YetenekDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h4>Yetenek Güncelle Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Kategori")
+    @Html.TextBoxFor(x => x.Kategori, new { @class = "form-control" })
+    <br />
+    @Html.Label("Yetenek Adı")
+    @Html.TextBoxFor(x => x.Yetenek, new { @class = "form-control" })
+    <br />
+    @Html.Label("Oran")
+    @Html.TextBoxFor(x => x.Oran, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
+

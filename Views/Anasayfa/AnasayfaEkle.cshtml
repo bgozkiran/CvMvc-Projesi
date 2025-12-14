@@ -1,0 +1,22 @@
+﻿@model CvMvc.Models.Entity.TblAnasayfa
+@{
+    ViewBag.Title = "AnasayfaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h4>Anasayfa Bilgileri Ekle</h4>
+<br />
+<form class="form-group" method="post">
+    <label>Resim</label>
+    <input type="text" name="Resim" class="form-control" placeholder="Resim yolu" />
+    <br />
+    <label>Ad Soyad</label>
+    <input type="text" name="AdSoyad" class="form-control" placeholder="Ad Soyad" />
+    <br />
+    <label>Açıklama</label>
+    <textarea placeholder="Açıklamanızı girin" name="Aciklama" class="form-control" rows="5"></textarea>
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+
+</form>
+

@@ -1,0 +1,30 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblYeteneklerim>
+
+
+<h2>Yeteneklerim</h2>
+<p>Kategorilere göre filtrelenebilen, yüzdeli ve animasyonlu barlar.</p>
+
+<div class="skills-filters">
+    <button class="filter-btn" data-filter="all">Hepsi</button>
+
+    @foreach (var kategori in Model.Select(x => x.Kategori).Distinct())
+    {
+        <button class="filter-btn" data-filter="@kategori">@kategori</button>
+    }
+</div>
+
+<div class="skills-list">
+    @foreach (var liste in Model)
+    {
+        <div class="skill" data-category="@liste.Kategori" data-percent="@liste.Oran">
+            <div class="skill-header">
+                <span>@liste.Yetenek</span>
+                <span class="skill-percent">0%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-fill"></div>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@model CvMvc.Models.Entity.TblProjelerim
+
+@{
+    ViewBag.Title = "ProjeDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h4>Proje Güncelle Sayfası</h4>
+<br />
+<form method="post">
+    @Html.Label("Proje Adı")
+    @Html.TextBoxFor(X => X.ProjeAdi, new { @class = "form-control" })   
+    <br />
+    @Html.Label("Kategori")
+    @Html.TextBoxFor(X => X.Kategori, new { @class = "form-control" })
+    <br />
+    @Html.Label("Teknolojiler")
+    @Html.TextBoxFor(X => X.Teknolojiler, new { @class = "form-control" })
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(X => X.Yil, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+</form>

@@ -1,0 +1,38 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblProjelerim>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<br />
+<h2>Projeler Sayfası</h2>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Proje Adı</th>
+        <th>Kategori</th>
+        <th>Teknolojiler</th>
+        <th>Yıl</th>
+        <th>Sil</th>
+        <th>Düzenle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.ProjeAdi</td>
+            <td>@item.Kategori</td>
+            <td>@item.Teknolojiler</td>
+            <td>@item.Yil</td>
+            <td><a href="/Proje/ProjeSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Proje/ProjeDuzenle/@item.ID" class="btn btn-warning">Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Proje/ProjeEkle/" class="btn btn-primary">Yeni Proje Ekle</a>
+
+

@@ -1,0 +1,28 @@
+﻿@model CvMvc.Models.Entity.TblAnasayfa
+@{
+    ViewBag.Title = "AnasayfaDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h4>Anasayfa Bilgileri Düzenle</h4>
+<br />
+<form method="post">
+    @Html.Label("Anasayfa ID")
+    @Html.TextBoxFor(X => X.ID, new { @class = "form-control" })
+    <br />
+    @Html.Label("Resim Yolu")
+    @Html.TextBoxFor(X => X.Resim, new { @class = "form-control" })
+    <br />
+    @Html.Label("Ad Soyad")
+    @Html.TextBoxFor(X => X.AdSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Açıklama")
+    @Html.TextAreaFor(X => X.Aciklama, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+</form>
+
+

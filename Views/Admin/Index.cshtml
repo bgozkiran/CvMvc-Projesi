@@ -1,0 +1,52 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblAdmin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <br />
+       
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">Admin Hesap İşlemleri</h3>
+                            </div>
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Kullanıcı Adı</th>
+                                    <th>Düzenle</th>
+                                    <th>Sil</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.KullaniciAdi</td>
+                                        <td><a href="/Admin/AdminDuzenle/@item.ID" class="btn btn-warning">Düzenle</a> </td>
+                                        <td><a href="/Admin/AdminSil/@item.ID" class="btn btn-danger">Sil</a> </td>                                       
+                                    </tr>
+                                }
+                            </table>
+
+
+                        </div>
+                        <a href="/Admin/AdminEkle/" class="btn btn-primary">Yeni Admin Ekle</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,20 @@
+﻿@model CvMvc.Models.Entity.TblSertifikalarim
+@{
+    ViewBag.Title = "SertifikaEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Sertifika Bilgileri Ekle</h4>
+<br />
+<form class="form-group" method="post">
+    <label> Sertifika Kategori</label>
+    <input type="text" name="Kategori" class="form-control" placeholder="Kategori yazınız" />
+    <br />
+    <label>Sertifika Adı</label>
+    <input type="text" name="Aciklama" class="form-control" placeholder="Sertifika ismini yazınız" />
+    <br />
+    <button class="btn btn-success">Kaydet</button>
+
+</form>
+

@@ -1,0 +1,136 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblProjelerim>
+
+<div class="projects-container">
+    <h2>Projelerim</h2>
+    <p>
+        Aşağıdaki tablo içerisindeki proje listesi dinamik olarak doldurulur,
+        kategorilere göre filtrelenebilir ve yıla göre sıralanabilir.
+    </p>
+
+    <!-- Filtre Butonları -->
+    <div class="projects-controls">
+        <div class="projects-filters">
+            <button type="button" class="projects-filter-btn active" onclick="filterProjects('all', this)">Tümü</button>
+            @foreach (var kategori in Model
+                                      .Select(x => x.Kategori)
+                                      .Where(k => !string.IsNullOrEmpty(k))
+                                      .Distinct())
+            {
+                <button type="button" class="projects-filter-btn"
+                        onclick="filterProjects('@kategori.ToLowerInvariant()', this)">
+                    @kategori
+                </button>
+            }
+        </div>
+
+        <button type="button" id="projects-sort-year-btn" class="btn ghost small" onclick="sortProjects()">
+            Yıla Göre Sırala (Artan)
+        </button>
+    </div>
+
+    <!-- Proje Tablosu -->
+    <div class="projects-table-wrapper">
+        <table class="projects-table">
+            <thead>
+                <tr>
+                    <th>Proje Adı</th>
+                    <th>Kategori</th>
+                    <th>Teknolojiler</th>
+                    <th>Yıl</th>
+                </tr>
+            </thead>
+            <tbody id="projects-tbody">
+                @foreach (var proje in Model)
+                {
+                    <tr class="project-item"
+                        data-category="@(proje.Kategori != null ? proje.Kategori.ToLowerInvariant() : "")"
+                        data-year="@proje.Yil">
+                        <td>@proje.ProjeAdi</td>
+                        <td>@proje.Kategori</td>
+                        <td>@proje.Teknolojiler</td>
+                        <td>@proje.Yil</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Script Doğrudan Buraya (Section KULLANMADAN) -->
+<script>
+    // Global değişken kirliliğini önlemek için scope içine alıyoruz
+    (function () {
+        // Tablo gövdesini ve tüm satırları en başta hafızaya alıyoruz
+        var tableBody = document.getElementById('projects-tbody');
+        // 'project-item' class'ına sahip tüm satırları diziye çevirip saklıyoruz
+        var allRows = Array.from(tableBody.getElementsByClassName('project-item'));
+
+        var isAscending = true; // Sıralama yönü
+        var currentFilter = 'all'; // Mevcut filtre
+
+        // --- FİLTRELEME FONKSİYONU ---
+        window.filterProjects = function (category, btnElement) {
+            currentFilter = category;
+
+            // Butonların aktiflik durumunu güncelle
+            if (btnElement) {
+                var buttons = document.querySelectorAll('.projects-filter-btn');
+                buttons.forEach(function (btn) { btn.classList.remove('active'); });
+                btnElement.classList.add('active');
+            }
+
+            renderTable();
+        };
+
+        // --- SIRALAMA FONKSİYONU ---
+        window.sortProjects = function () {
+            isAscending = !isAscending; // Yönü tersine çevir
+
+            // Buton yazısını güncelle
+            var sortBtn = document.getElementById('projects-sort-year-btn');
+            if (sortBtn) {
+                sortBtn.innerText = isAscending ? "Yıla Göre Sırala (Artan)" : "Yıla Göre Sırala (Azalan)";
+            }
+
+            renderTable();
+        };
+
+        // --- TABLOYU YENİDEN ÇİZME (RENDER) ---
+        function renderTable() {
+            // 1. Adım: Filtreleme
+            // allRows dizisinden (orijinal veriden) filtreye uyanları seçiyoruz
+            var filteredRows = allRows.filter(function (row) {
+                if (currentFilter === 'all') return true;
+
+                var rowCategory = row.getAttribute('data-category');
+                return rowCategory === currentFilter;
+            });
+
+            // 2. Adım: Sıralama
+            filteredRows.sort(function (a, b) {
+                var yearA = parseInt(a.getAttribute('data-year')) || 0;
+                var yearB = parseInt(b.getAttribute('data-year')) || 0;
+                return isAscending ? (yearA - yearB) : (yearB - yearA);
+            });
+
+            // 3. Adım: DOM'u güncelle
+            // Mevcut tabloyu temizle
+            tableBody.innerHTML = '';
+
+            // Filtrelenmiş ve sıralanmış satırları ekle
+            filteredRows.forEach(function (row) {
+                tableBody.appendChild(row);
+            });
+
+            // Eğer hiç veri yoksa kullanıcıya bilgi verebilirsin (Opsiyonel)
+            if (filteredRows.length === 0) {
+                tableBody.innerHTML = '<tr><td colspan="4" style="text-align:center;">Bu kategoride proje bulunamadı.</td></tr>';
+            }
+        }
+
+        // Sayfa ilk yüklendiğinde varsayılan (Tümü) olarak çalıştır
+        renderTable();
+
+    })();
+</script>

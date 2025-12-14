@@ -1,0 +1,24 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblSertifikalarim>
+
+<h2>Sertifikalarım</h2>
+<p>Kategorilere göre filtrelenebilen sertifika kartları.</p>
+
+<div class="skills-filters">
+    <button class="filter-btn" data-filter="all">Hepsi</button>
+    @foreach (var kategori in Model.Select(x => x.Kategori).Distinct())
+    {
+        <button class="filter-btn" data-filter="@kategori">@kategori</button>
+    }
+</div>
+
+<div class="skills-list">
+    @foreach (var liste in Model)
+    {
+        <div class="skill" data-category="@liste.Kategori">
+            <div class="skill-header">
+                <span class="skill-title">@liste.Aciklama</span>
+            </div>
+        </div>
+    }
+</div>

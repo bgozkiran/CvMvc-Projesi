@@ -1,0 +1,14 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblSosyalMedya>
+
+<h4 style="text-align:center">Sosyal Medya Hesapları</h4>
+<div class="about-social-links" aria-label="Sosyal medya bağlantıları">
+    @foreach (var social in Model)
+    {
+        <a class="social-icon" href="@social.Link" target="_blank" rel="noopener noreferrer" aria-label="@social.Ad">
+            <i class="@social.İkon"></i>
+        </a>
+    }
+</div>
+
+

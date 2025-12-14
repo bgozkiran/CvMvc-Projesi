@@ -1,0 +1,36 @@
+﻿@model CvMvc.Models.Entity.Tblİletisim
+
+
+<h2>İletişim</h2>
+<p>Projeler, iş birlikleri veya soru-cevap için bana ulaşabilirsin.</p>
+
+<div class="contact-grid">
+        <div>
+            <p><strong>E-posta:</strong> seninmailin@example.com</p>
+            <p><strong>GitHub:</strong> github.com/kullaniciadiniz</p>
+            <p><strong>LinkedIn:</strong>linkedin.com/kullaniciadiniz</p>
+        </div>
+
+    <form class="contact-form" method="post" action="/Default/İletisim">
+        <label>
+            Ad Soyad
+            <input type="text" name="AdSoyad" />
+        </label>
+        <label>
+            E-posta
+            <input type="email" name="Mail" />
+        </label>
+        <label>
+            Konu
+            <input type="text" name="Konu" />
+        </label>
+        <label>
+            Mesaj
+            <textarea rows="4" name="Mesaj"></textarea>
+        </label>
+        <button type="submit" class="btn primary">Gönder</button>
+    </form>
+</div>
+
+
+

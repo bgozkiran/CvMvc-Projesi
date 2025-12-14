@@ -1,0 +1,126 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblAnasayfa>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> CvMvc | Portfolio  </title>
+    <link rel="stylesheet" href="/portfolio/css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">İsminiz</div>
+
+        <nav class="main-nav">
+            <a href="#home">Anasayfa</a>
+            <a href="#about">Hakkımda</a>
+            <a href="#education">Eğitim Hayatım</a>
+            <a href="#expreience">Deneyimlerim</a>
+            <a href="#skills">Yeteneklerim</a>
+            <a href="#certificate">Sertifikalarım</a>
+            <a href="#projects">Projelerim</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO / ANASAYFA -->
+        @foreach (var hero in Model)
+        {
+            <section id="home" class="section hero">
+                <div class="hero-grid">
+                    <!-- PROFİL KARTI -->
+                    <aside class="profile-card">
+                        <div class="profile-photo-wrapper">
+                            <img id="profile-photo"
+                                 src="@hero.Resim"
+                                 alt="Profil fotoğrafı" />
+                        </div>
+                    </aside>
+
+                    <!-- METİN TARAFI -->
+                    <div class="hero-text">
+                        <h1>
+                            Merhaba, ben
+                            <span class="accent">@hero.AdSoyad</span>
+                        </h1>
+
+                        <h2 class="typing-container">
+                            <span id="typing-text"></span>
+                            <span class="typing-cursor"></span>
+                        </h2>
+
+                        <p class="hero-intro">
+                            @hero.Aciklama
+                        </p>
+
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn primary">Projelerime Göz At</a>
+                            <a href="#contact" class="btn outline">Benimle Çalış</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing verisi (index içinde) -->
+                <script id="typing-phrases-data" type="application/json">
+                    [
+                        "Siber Güvenlik alanında ilerliyorum .",
+                        "Web Programlamaya ilgi duyuyorum.",
+                        "Modern ve Tepkisel web arayüzleri tasarlıyorum.",
+                        "Performans odaklı projeler geliştiriyorum."
+
+                    ]
+                </script>
+            </section>
+        }
+
+
+        <!-- HAKKIMDA -->
+        <section id="about" class="section about">
+            @Html.Action("Hakkimda")
+        </section>
+
+        <!-- EĞİTİM HAYATI -->
+        <section id="education" class="section education">
+            @Html.Action("Egitimlerim")
+        </section>
+
+        <!-- DENEYİMLER -->
+        <section id="expreience" class="section education">
+            @Html.Action("Deneyimlerim")
+        </section>
+
+        <!-- YETENEKLERİM -->
+        <section id="skills" class="section skills">
+            @Html.Action("Yeteneklerim")
+        </section>
+
+        <!-- SERTİFİKA -->
+        <section id="certificate" class="section certificate">
+            @Html.Action("Sertifikalarim")
+        </section>
+
+        <!-- PROJELER - DİNAMİK TABLO -->
+        <section id="projects" class="section projects">
+            @Html.Action("Projelerim")
+        </section>
+
+        <!-- İLETİŞİM -->
+        <section id="contact" class="section contact">
+            @Html.Action("İletisim")
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© <span id="year"></span> Adınız Soyadınız. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="/portfolio/script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@using CvMvc.Models.Entity
+@model List<TblDeneyimlerim>
+
+
+<h2>Deneyimlerim</h2>
+@foreach (var deneyim in Model)
+{
+ <ul class="timeline">
+     <li class="timeline-item reveal-on-scroll">
+         <div class="timeline-date">@deneyim.Tarih</div>
+         <div class="timeline-content">
+             <h3>@deneyim.Baslik</h3>
+             <p>@deneyim.AltBaslik</p>
+             <p>
+                 @deneyim.Aciklama
+             </p>
+         </div>
+     </li>
+ </ul>
+}
+

@@ -1,0 +1,21 @@
+﻿@model CvMvc.Models.Entity.TblHakkimda
+@{
+    ViewBag.Title = "HakkimdaDuzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Hakkımda Düzenle Sayfası</h4>
+<br />
+<form method="post">
+    @Html.HiddenFor(x => x.ID)
+
+    @Html.Label("Açıklama1")
+    @Html.TextAreaFor(x => x.Aciklama1, new { @class = "form-control" })
+
+    @Html.Label("Açıklama2")
+    @Html.TextAreaFor(x => x.Aciklama2, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+</form>
