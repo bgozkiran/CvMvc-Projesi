@@ -2,7 +2,7 @@
 
 Bu proje, Murat Yüceadağ'ın Udemy platformunda paylaştığı **7.5 saatlik Dinamik Admin Panelli MVC5** eğitim projesidir.
 
-CvMvc; kişiye ait CV verilerini web ortamında yönetip paylaşmaya yarayan bir portföy/CV uygulamasıdır.  
+CvMvc; kişiye ait CV verilerini web ortamında yönetip paylaşmaya yarayan bir portföy / CV projesidir.  
 Admin paneli üzerinden kullanıcı bilgileri düzenlenebilir; ziyaretçiler ise iletişim bölümünden mesaj gönderebilir.
 
 ## Özellikler
