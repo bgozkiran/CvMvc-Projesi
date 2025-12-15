@@ -17,7 +17,7 @@ Admin paneli üzerinden kullanıcı bilgileri düzenlenebilir; ziyaretçiler ise
 - **Pop-up** ile veri ekleme ekranı
 - **CRUD** işlemleri (Admin + Default tarafı sayfaların oluşturulması)
 - **Validation:** kontrolleri (Required, MaxLength vb.)
-- **Authorize** [AllowAnonimus] ile sayfa erişim kontrolleri vb , web confing ayarlamaları) 
+- **Authorize** [AllowAnonimus] ile sayfa erişim kontrolleri vb , web confing ayarlamaları
 
 ## Kullanılan Teknolojiler
 
